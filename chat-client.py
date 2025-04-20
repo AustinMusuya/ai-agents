@@ -13,7 +13,7 @@ try:
         credential=DefaultAzureCredential(), conn_str=project_connection_string)
 
     # Get an Azure OpenAI chat client
-    opneai_client = project_client.inference.get_azure_openai_client(
+    openai_client = project_client.inference.get_azure_openai_client(
         api_version="2024-12-01-preview")
 
     # Get a chat client
@@ -22,7 +22,7 @@ try:
     # Get a chat completion based on a user-provided prompt
     user_prompt = input("Enter a question: ")
 
-    response = opneai_client.chat.completions.create(
+    response = openai_client.chat.completions.create(
         model="gpt-4o",
         messages=[
             {"role": "system",
